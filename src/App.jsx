@@ -4,7 +4,7 @@ import NotFound from "./ErrorPages/NotFound";
 import Layout from "./Layout/Layout";
 import Analytics from './views/Analytics';
 import Discover from './views/Discover';
-import Sales from './views/Sales';
+import Sales from './views/Sales/Sales';
 import Automotive from './views/Automotive';
 import SmartHome from './views/SmartHome';
 
