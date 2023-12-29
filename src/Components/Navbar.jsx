@@ -24,7 +24,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={`flex justify-between py-4 items-center mx-6 px-4 rounded-3xl drop-shadow-lg background-blur-sm  ${isScrolled ? 'bg-white bg-opacity-80' : 'bg-transparent'}`}>
+        <div className={`flex justify-between py-4 items-center mx-6 px-4 rounded-3xl drop-shadow-lg background-blur-sm transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-80 sticky top-5 z-50  ' : 'bg-transparent'}`}>
             <div >
                 <span className='font-semibold'>Home / Dashbord / {pathName.slice(1)}</span>
                 <h3 className='text-xl font-semibold pt-1'>{pathName.slice(1)}</h3>

@@ -12,7 +12,7 @@ const Layout = () => {
                     <Sidebar />
                 </div>
                 <div className="col-span-10 relative">
-                    <Navbar />
+                    <Navbar className="absolute top-0 left-0 right-0" />
                     <Outlet />
                     <Footer />
                 </div>
