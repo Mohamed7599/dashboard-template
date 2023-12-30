@@ -7,7 +7,7 @@ import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = () => {
     return (
-        <div className='py-3 px-3 absolute bottom-0 w-full'>
+        <div className='py-3 px-6'>
             <div className='flex  justify-between w-full'>
                 <span className='text-[#9095ab] text-sm'>2023, Cloned By <b className='text-[#344767]'>Mohamed Magdy</b></span>
                 <div className='flex gap-4 '>

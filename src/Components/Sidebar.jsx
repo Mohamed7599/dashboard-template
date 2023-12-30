@@ -5,19 +5,19 @@ import Collapsible from 'react-collapsible';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 // eslint-disable-next-line react/prop-types
-const CustomHeader = ({ isCollapsed }) => {
+const CustomHeader = ({ isDashboardCollapsed }) => {
     return (
         <div className="flex gap-2 py-2 mt-2 items-center justify-between px-3 rounded-lg hover:bg-[#4e4e51]">
             <div className='flex gap-2 items-center'>
                 <MdDashboard size={24} className='text-white' />
                 <p className='text-base text-white'>Dashboards</p>
             </div>
-            {isCollapsed ? <FaAngleDown size={18} className='text-white' /> : <FaAngleUp size={18} className='text-white' />}
+            {isDashboardCollapsed ? <FaAngleDown size={18} className='text-white' /> : <FaAngleUp size={18} className='text-white' />}
         </div>
     )
 }
 export default function Sidebar() {
-    const [isCollapsed, setIsCollapsed] = useState(true);
+    const [isDashboardCollapsed, setIsDashboardCollapsed] = useState(true);
     const navigate = useNavigate();
 
     const dashboards = [
@@ -48,36 +48,33 @@ export default function Sidebar() {
         },
     ]
     return (
-        <>
-            <div className="bg-gradient-dark shadow-inner shadow-[#2c2c30] rounded-3xl py-4 px-8 mx-4 cursor-default my-3 h-screen">
-
-                <div className=" py-3 flex gap-2 border-b border-gray-600 justify-center items-center">
-                    <img src="/src/assets/Images/logo-ct.png" width={32} alt="logo" />
-                    <h3 className="text-base font-semibold text-white">My Dashboard</h3>
+        <div className="h-[calc(100vh-20px)] bg-gradient-dark shadow-inner shadow-[#2c2c30] rounded-3xl w-full py-4 px-8 mx-4 cursor-default my-3">
+            <div className=" py-3 flex gap-2 border-b border-gray-600 justify-center items-center">
+                <img src="/src/assets/Images/logo-ct.png" width={32} alt="logo" />
+                <h3 className="text-base font-semibold text-white">My Dashboard</h3>
+            </div>
+            <nav>
+                <div className="flex gap-2 py-4 pl-2 items-center border-b border-gray-600">
+                    <Avatar name="Mohamed Magdy" size="40" round={true} />
+                    <p className='text-white'>Mohamed Magdy</p>
                 </div>
-                <nav>
-                    <div className="flex gap-2 py-4 pl-2 items-center border-b border-gray-600">
-                        <Avatar name="Mohamed Magdy" size="40" round={true} />
-                        <p className='text-white'>Mohamed Magdy</p>
-                    </div>
-                    <Collapsible
-                        trigger={<CustomHeader isCollapsed={isCollapsed} />}
-                        onOpening={() => setIsCollapsed(false)}
-                        onClosing={() => setIsCollapsed(true)}
-                        className='collapsible'
-                    >
-                        {dashboards.map((dashboard) =>
-                        (
-                            <div key={dashboard.name} className='flex gap-2 py-3 pl-3 items-center' ><span className='text-lg text-white'>{dashboard.icon}</span>
-                                <span className='text-md font-thin text-white' onClick={() => { navigate(`/${dashboard.path}`) }}>{dashboard.name}</span>
-                            </div>
-                        )
+                <Collapsible
+                    trigger={<CustomHeader isCollapsed={isDashboardCollapsed} />}
+                    onOpening={() => setIsDashboardCollapsed(false)}
+                    onClosing={() => setIsDashboardCollapsed(true)}
+                    className='collapsible'
+                >
+                    {dashboards.map((dashboard) =>
+                    (
+                        <div key={dashboard.name} className='flex gap-2 py-3 pl-3 items-center' ><span className='text-lg text-white'>{dashboard.icon}</span>
+                            <span className='text-md text-white' onClick={() => { navigate(`/${dashboard.path}`) }}>{dashboard.name}</span>
+                        </div>
+                    )
 
-                        )}
-                    </Collapsible>
-                </nav >
-                <div id="detail"></div>
-            </div >
-        </>
+                    )}
+                </Collapsible>
+            </nav >
+            <div id="detail"></div>
+        </div >
     );
 }
