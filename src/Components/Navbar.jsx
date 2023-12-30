@@ -5,11 +5,12 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { IoIosSearch } from "react-icons/io";
 import { FaGear } from "react-icons/fa6";
 import { FaUserCircle, FaBell } from "react-icons/fa";
+import { HiMenuAlt3, HiMenu } from "react-icons/hi";
 
 
 
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     const location = useLocation();
     const pathName = location.pathname;
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +26,15 @@ const Navbar = () => {
 
     return (
         <div className={`flex justify-between py-4 items-center mx-6 px-4 rounded-3xl drop-shadow-lg background-blur-sm transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-80 sticky top-5 z-50  ' : 'bg-transparent'}`}>
-            <div >
-                <span className='font-semibold'>Home / Dashbord / {pathName.slice(1)}</span>
-                <h3 className='text-xl font-semibold pt-1'>{pathName.slice(1)}</h3>
-            </div >
+            <div className='flex gap-3 items-center
+            
+            '>
+                {isSidebarOpen ? <HiMenuAlt3 size={32} className='' onClick={() => { toggleSidebar() }} /> : <HiMenu size={32} className='' onClick={() => { toggleSidebar() }} />}
+                <div className='flex flex-col'>
+                    <span className='font-semibold hidden lg:block'>Home / Dashbord / {pathName.slice(1)}</span>
+                    <h3 className='text-xl font-semibold pt-1'>{pathName.slice(1)}</h3>
+                </div>
+            </div>
             <div className='flex gap-4 items-center'>
                 <TextField
                     label="Search"
