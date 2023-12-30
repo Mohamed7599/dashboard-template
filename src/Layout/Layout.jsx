@@ -7,13 +7,18 @@ import Sidebar from '../Components/Sidebar';
 const Layout = () => {
     return (
         <>
-            <div className='grid grid-cols-12 gap-4 relative'>
-                <div className="col-span-2 ">
-                    <Sidebar />
+            <div className='grid grid-cols-12 gap-4'>
+                <div className="col-span-2">
+                    <div className="sticky top-3 bottom-0 h-[calc(100vh-22px)] pr-5">
+                        <Sidebar />
+                    </div>
                 </div>
-                <div className="col-span-10 relative">
-                    <Navbar className="absolute top-0 left-0 right-0" />
-                    <Outlet />
+                <div className="col-span-10 flex flex-col relative">
+                    <Navbar />
+                    <div className="flex-grow overflow-auto">
+                        <Outlet />
+                    </div>
+
                     <Footer />
                 </div>
             </div>
