@@ -1,4 +1,3 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./ErrorPages/NotFound";
 import Layout from "./Layout/Layout";
@@ -6,7 +5,7 @@ import Analytics from './views/Analytics';
 import Discover from './views/Discover';
 import Sales from './views/Sales/Sales';
 import Automotive from './views/Automotive';
-import SmartHome from './views/SmartHome';
+import SmartHome from './views/SmartHome/SmartHome';
 
 function App() {
   const router = createBrowserRouter([
