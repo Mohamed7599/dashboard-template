@@ -25,7 +25,7 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     }, []);
 
     return (
-        <div className={`flex justify-between py-4 items-center mx-6 px-4 rounded-3xl drop-shadow-lg background-blur-sm transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-80 sticky top-5 z-50  ' : 'bg-transparent'}`}>
+        <div className={`flex justify-between py-4 items-center mr-5 px-4 rounded-3xl drop-shadow-lg background-blur-sm transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-80 sticky top-5 z-50  ' : 'bg-transparent'}`}>
             <div className='flex gap-3 items-center
             
             '>
@@ -52,9 +52,6 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                     <FaGear size={20} />
                     <FaUserCircle size={20} />
                     <FaBell size={20} />
-
-
-
                 </div>
 
             </div>
