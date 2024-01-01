@@ -63,7 +63,26 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(236, 64, 122, 0.5);
   padding: 20px;
-  margin-bottom: 20px;
+  position: absolute;
+  bottom: 77%;
+  width: 100%;
+
+}
+
+/* Add these styles to your existing styles or create a new stylesheet */
+/* Add these styles to your existing styles or create a new stylesheet */
+.image-container {
   position: relative;
-  top: -35%;
+  width: 100%;
+  /* Ensure the overflow is hidden to prevent negative gap issues */
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  /* Ensure the  doesn't exceed its container */
+  top: 12%;
+  transform: translateY(-12%);
+  object-fit: cover;
+  object-position: center;
 }

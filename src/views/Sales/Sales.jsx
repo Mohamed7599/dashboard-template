@@ -27,7 +27,7 @@ ChartJS.register(ArcElement, CategoryScale,
 const Sales = () => {
     return (
         <div className='pr-5 py-3 flex flex-col gap-5'>
-            <div id='STATS' className='grid grid-cols-12 gap-3'>
+            <div className='grid grid-cols-12 gap-3'>
                 <div className='lg:col-span-4 col-span-12'>
                     <Card title='Sales' date='6 May - 7 May'  >
                         <h3 className='text-2xl font-extrabold'>$24,000</h3>
