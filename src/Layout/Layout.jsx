@@ -9,11 +9,18 @@ const Layout = () => {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     }
+    const maxSidebarWidth = '280px'; // Set your maximum expected width here
+
+    const sidebarStyle = {
+        width: isSidebarOpen ? maxSidebarWidth : '32px',
+        marginRight: isSidebarOpen ? '0px' : '24px',
+        transition: 'all 0.5s ease-in-out',
+    };
     return (
         <>
-            <div className='flex'>
-                <div className={`transition-all duration-500 ease-in-out sticky top-3 bottom-0 h-[calc(100vh-22px)] pr-5 ${isSidebarOpen ? 'w-96' : 'w-36'}`}>
-                    <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+            <div className={`flex justify-between ${isSidebarOpen ? 'gap-2' : 'gap-8'}`}>
+                <div style={sidebarStyle} className={`sticky top-3 bottom-0 h-[calc(100vh-22px)]`}>
+                    <Sidebar isSidebarOpen={isSidebarOpen} />
                 </div>
                 <div className="flex-grow flex flex-col">
                     <Navbar className='flex-grow overflow-auto' isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />

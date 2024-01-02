@@ -59,36 +59,53 @@ h1 {
 }
 
 .wheather-card {
-  background-image: linear-gradient(195deg, #ec407a, #d81b60);
-  border-radius: 10px;
-  box-shadow: 0 5px 5px rgba(236, 64, 122, 0.5);
   padding: 20px;
   position: absolute;
-  bottom: 77%;
+  bottom: 10%;
   width: 100%;
 
 }
 
 /* Add these styles to your existing styles or create a new stylesheet */
 /* Add these styles to your existing styles or create a new stylesheet */
-.image-container {
-  position: relative;
-  width: 100%;
-  /* Ensure the overflow is hidden to prevent negative gap issues */
-}
-
 .image {
   width: 100%;
   max-width: 100%;
   /* Ensure the  doesn't exceed its container */
-  top: 12%;
-  transform: translateY(-12%);
+  top: 10%;
+  transform: translateY(-10%);
   object-fit: cover;
-  object-position: center;
+  object-position: center bottom;
 }
 
 .legend {
   width: 20px;
   height: 20px;
   border-radius: 25%;
- }
+}
+
+/* turn this to work for the muiswitch */
+.checked-switch .MuiSwitch-track {
+  background-color: gray;
+}
+
+.checked-switch .MuiSwitch-thumb {
+  background-color: #fff;
+  border: 1px solid #42424a;
+}
+
+.checked-switch .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+  background-color: #000;
+}
+
+/* make the muitabs smaller */
+.MuiTabs-root {
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: visible;
+}
+/* make the muitab smaller height */
+
+
+  
