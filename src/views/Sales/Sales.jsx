@@ -49,9 +49,9 @@ const Sales = () => {
             </div>
             {/* finish of the stats cards and start of the graphs */}
             <div id='graphs' className=' grid grid-cols-12 gap-5' >
-                <div className='lg:col-span-5  col-span-12'>
-                    <Card title='Sales' isDefaultColor={true} titleSize={'text-lg'}>
-                        <div className=' h-80 flex justify-center my-3'>
+                <div className='lg:col-span-4 col-span-12'>
+                    <Card title='Sales' isDefaultColor={true} titleSize={'text-lg'} className={'flex flex-col justify-between'}>
+                        <div className='h-64 my-3'>
                             <Pie data={channelsData} options={channelsOptions} className='h-3/4' />
                         </div>
                         <div className='flex justify-between'>
@@ -60,7 +60,7 @@ const Sales = () => {
                         </div>
                     </Card>
                 </div>
-                <div className='lg:col-span-7 col-span-12'>
+                <div className='lg:col-span-8 col-span-12'>
                     <Card title='Revenue' isDefaultColor={true} titleSize={'text-lg'} className="flex flex-col h-[50vh]">
                         <div className='flex-1 h-96'>
                             <Line options={revenueOptions} data={revenueData} />

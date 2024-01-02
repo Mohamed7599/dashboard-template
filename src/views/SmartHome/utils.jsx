@@ -54,3 +54,41 @@ export const wheatherOptions = {
         },
     },
 };
+export const consumptionData = {
+    labels: ['Living Room', 'Kitchen', 'Attic', 'Garage', 'Basement',],
+    datasets: [
+        {
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                '#e91e63',
+                '#646c7b',
+                '#2a84eb',
+                '#5cb360',
+                '#fe9e19',
+            ],
+            borderColor: [
+                '#e91e63',
+                '#646c7b',
+                '#2a84eb',
+                '#5cb360',
+                '#fe9e19'
+            ],
+            borderWidth: 2,
+
+        },
+    ],
+};
+export const consumptionOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    aspectRatio: 0.5,
+    cutout: '95%', // Adjust this value as needed
+    plugins: {
+        legend: {
+            display: false,
+
+        },
+    },
+};
+
