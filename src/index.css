@@ -57,3 +57,55 @@ h1 {
 .collapsible {
   transition: all 0.3s ease-out;
 }
+
+.wheather-card {
+  padding: 20px;
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+
+}
+
+/* Add these styles to your existing styles or create a new stylesheet */
+/* Add these styles to your existing styles or create a new stylesheet */
+.image {
+  width: 100%;
+  max-width: 100%;
+  /* Ensure the  doesn't exceed its container */
+  top: 10%;
+  transform: translateY(-10%);
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.legend {
+  width: 20px;
+  height: 20px;
+  border-radius: 25%;
+}
+
+/* turn this to work for the muiswitch */
+.checked-switch .MuiSwitch-track {
+  background-color: gray;
+}
+
+.checked-switch .MuiSwitch-thumb {
+  background-color: #fff;
+  border: 1px solid #42424a;
+}
+
+.checked-switch .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+  background-color: #000;
+}
+
+/* make the muitabs smaller */
+.MuiTabs-root {
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: visible;
+}
+/* make the muitab smaller height */
+
+
+  

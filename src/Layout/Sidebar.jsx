@@ -9,7 +9,7 @@ import { HiMenuAlt3, HiMenu } from "react-icons/hi";
 // eslint-disable-next-line react/prop-types
 const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
     return (
-        <div className={`flex gap-2 py-2 mt-2 items-center transition-all duration-500 overflow-hidden ${isSidebarOpen ? 'justify-between px-3' : 'justify-center'} rounded-lg hover:bg-[#4e4e51]`}>
+        <div className={`flex gap-2 py-2 mt-2 items-center transition-all duration-500 overflow-hidden ${isSidebarOpen ? 'justify-between px-3' : 'justify-center'} ${isDashboardCollapsed === false && 'bg-[#4e4e51]'} rounded-lg hover:bg-[#4e4e51]`}>
             <div className='flex gap-2 items-center'>
                 <MdDashboard size={24} className='text-white' />
                 <p className={`text-white text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>Dashboards</p>
@@ -26,7 +26,7 @@ const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
         </div>
     )
 }
-export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
+export default function Sidebar({ isSidebarOpen }) {
     const [isDashboardCollapsed, setIsDashboardCollapsed] = useState(true);
     const [selectedDashboard, setSelectedDashboard] = useState('Analytics');
 
@@ -60,11 +60,12 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
         },
     ]
     return (
-        <div className={`h-[calc(100vh-20px)] bg-gradient-dark shadow-inner shadow-[#2c2c30] ${isSidebarOpen ? 'rounded-3xl ' : 'rounded-2xl items-center'}  py-4 px-8 mx-4 cursor-default  flex flex-col`}>
-            <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
+        <div
+            className={`h-[calc(100vh-20px)] bg-gradient-dark shadow-inner shadow-[#2c2c30] ${isSidebarOpen ? 'rounded-3xl ' : 'rounded-2xl items-center'}  py-4 px-8 mx-4 cursor-default flex flex-col`}
+        >            <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
                 <div className='flex justify-center gap-2'>
                     <img src="/src/assets/Images/logo-ct.png" width={24.5} height={24.5} alt="logo" />
-                    <p className={`text-white text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>My Dashboard</p>
+                    <p className={`text-white font-bold text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>My Dashboard</p>
                 </div>
             </div>
             <nav>
@@ -112,6 +113,6 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
                 </Collapsible>
             </nav >
             <div id="detail"></div>
-        </div >
+        </ div >
     );
 }

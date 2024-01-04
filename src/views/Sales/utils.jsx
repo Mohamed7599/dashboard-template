@@ -10,7 +10,7 @@ import chair from '../../assets/Images/black-chair.jpg';
 import charger from '../../assets/Images/bang-sound.jpg';
 import camera from '../../assets/Images/photo-tools.jpg';
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
-const generateLData = (labels, min, max) => {
+const generateData = (labels, min, max) => {
   return labels.map(() => faker.number.int({ min: min, max: max }));
 };
 
@@ -50,13 +50,13 @@ export const revenueData = {
   datasets: [
     {
       label: "Google Ads",
-      data: generateLData(revenueLabels, 0, 700),
+      data: generateData(revenueLabels, 0, 700),
       borderColor: "#344767",
       backgroundColor: "#344767",
     },
     {
       label: "Facebook Ads",
-      data: generateLData(revenueLabels, 0, 700),
+      data: generateData(revenueLabels, 0, 700),
       borderColor: "#e91e63",
       backgroundColor: "#e91e63",
     },
@@ -102,7 +102,7 @@ export const SalesByAgeData = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: generateLData(salesByAgeLabels, 0, 60),
+      data: generateData(salesByAgeLabels, 0, 60),
       backgroundColor: "#344767",
       barPercentage: 0.8, // Determines the width of the bar relative to the space available (between 0 and 1)
       categoryPercentage: 1,
