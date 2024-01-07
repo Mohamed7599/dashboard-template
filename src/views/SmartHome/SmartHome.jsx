@@ -179,7 +179,7 @@ const SmartHome = () => {
                     </Card>
                 </div>
                 <div className='col-span-12 lg:col-span-6'>
-                    <Card title={'Consumption by room'} isTitleDefaultColor={true} titleSize={'text-lg'} className={'flex flex-col justify-start gap-8 h-full'}>
+                    <Card title={'Consumption by room'} isTitleDefaultColor={true} titleSize={'text-lg'} className={'flex flex-col justify-center gap-8 h-full'}>
                         <div className='grid grid-cols-12'>
                             <div className='col-span-12 lg:col-span-6 relative'>
                                 <Doughnut data={consumptionData} options={consumptionOptions} />

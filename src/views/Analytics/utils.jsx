@@ -11,6 +11,7 @@ export const salesByCountryTable = [
             countryName: 'United States',
         },
         sales: 720,
+        value: '230,900',
         bounce: 20
     },
     {
@@ -19,6 +20,8 @@ export const salesByCountryTable = [
             countryName: 'United Kingdom'
         },
         sales: 620,
+        value: '230,900',
+
         bounce: 30
     },
     {
@@ -27,6 +30,8 @@ export const salesByCountryTable = [
             countryName: 'Germany'
         },
         sales: 520,
+        value: '230,900',
+
         bounce: 40
     },
     {
@@ -35,6 +40,8 @@ export const salesByCountryTable = [
             countryName: 'Canada'
         },
         sales: 420,
+        value: '230,900',
+
         bounce: 50
     },
     {
@@ -43,6 +50,7 @@ export const salesByCountryTable = [
             countryName: 'France'
         },
         sales: 320,
+        value: '230,900',
         bounce: 60
     }
 ];
@@ -57,6 +65,16 @@ export const salesByCountryCols = [
                     <img src={img} alt={countryName} width={24} />
                     <span className='text-lg font-medium'>{countryName}</span>
                 </div>
+            )
+        },
+    },
+
+    {
+        Header: 'Value',
+        accessor: 'value',
+        Cell: ({ row }) => {
+            return (
+                <span className='text-lg font-medium'>{row.value}</span>
             )
         },
     },
