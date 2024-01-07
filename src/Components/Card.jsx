@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ title, date, children, isTitleDefaultColor, titleSize, className, bgColor }) => {
+const Card = ({ children, className, bgColor }) => {
     return (
         <div className={`${bgColor ? bgColor : 'bg-white'} rounded-2xl px-4 py-5 shadow-md  ${className && className}`}>
             {/* <div className='flex justify-between'>

@@ -29,19 +29,31 @@ const Sales = () => {
         <div className='pr-5 py-8 flex flex-col gap-5'>
             <div className='grid grid-cols-12 gap-3'>
                 <div className='lg:col-span-4 col-span-12'>
-                    <Card title='Sales' date='6 May - 7 May' className={'h-full'}  >
+                    <Card className={'h-full'}  >
+                        <div className='flex justify-between'>
+                            <h3 className={`font-semibold text-gray-500`}>Sales</h3>
+                            <span className='text-sm text-gray-400'>6 May - 7 May</span>
+                        </div>
                         <h3 className='text-2xl font-extrabold'>$24,000</h3>
                         <span className='text-base font-semibold text-[#4caf50]'>+55% <span className='text-gray-400 font-medium'>Since last month</span></span>
                     </Card>
                 </div>
                 <div className='lg:col-span-4 col-span-12'>
-                    <Card title='Customers' date='6 May - 7 May' className={'h-full'}  >
+                    <Card className={'h-full'}  >
+                        <div className='flex justify-between'>
+                            <h3 className={`font-semibold text-gray-500`}>Customers</h3>
+                            <span className='text-sm text-gray-400'>6 May - 7 May</span>
+                        </div>
                         <h3 className='text-2xl font-extrabold'>3.200</h3>
                         <span className='text-base font-semibold text-[#4caf50]'>+12% <span className='text-gray-400 font-medium'>Since last month</span></span>
                     </Card>
                 </div>
                 <div className='lg:col-span-4 col-span-12'>
-                    <Card title='Avg, revenue' date='6 May - 7 May' className={'h-full'} >
+                    <Card className={'h-full'} >
+                        <div className='flex justify-between'>
+                            <h3 className={`font-semibold text-gray-500`}>Avg, Revenue</h3>
+                            <span className='text-sm text-gray-400'>6 May - 7 May</span>
+                        </div>
                         <h3 className='text-2xl font-extrabold'>$1.200</h3>
                         <span className='text-base font-semibold text-[#4caf50]'>+$213 <span className='text-gray-400 font-medium'>Since last month</span></span>
                     </Card>
