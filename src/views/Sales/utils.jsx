@@ -127,13 +127,19 @@ export const SalesByAgeOptions = {
   },
   scales: {
     y: {
-      border: { dash: [4, 4] }, // for the grid lines
-      grid: {
+      border: {
+        dash: [4, 4],
+        color: "transparent",
+      }, grid: {
         color: '#e9eaed', // for the grid lines
 
       },
     },
     x: {
+      border: {
+        dash: [4, 4],
+        color: "transparent",
+      },
       grid: {
         display: false, // This will hide the vertical grid lines
       },
@@ -148,40 +154,40 @@ export const salesByCountryTable = [
       img: us,
       countryName: 'United States',
     },
-    sales: 720,
-    bounce: 20
+    sales: 2500,
+    bounce: 29.9
   },
   {
     country: {
       img: uk,
       countryName: 'United Kingdom'
     },
-    sales: 620,
-    bounce: 30
+    sales: 3900,
+    bounce: 40.22
   },
   {
     country: {
       img: germany,
       countryName: 'Germany'
     },
-    sales: 520,
-    bounce: 40
+    sales: 1400,
+    bounce: 23.44
   },
   {
     country: {
       img: canada,
       countryName: 'Canada'
     },
-    sales: 420,
-    bounce: 50
+    sales: 562,
+    bounce: 32.14
   },
   {
     country: {
       img: france,
       countryName: 'France'
     },
-    sales: 320,
-    bounce: 60
+    sales: 400,
+    bounce: 56.83
   }
 ];
 export const productsTable = [
@@ -252,7 +258,7 @@ export const salesByCountryCols = [
     accessor: 'sales',
     Cell: ({ row }) => {
       return (
-        <span className='text-lg font-medium'>{row.sales}</span>
+        <span className=''>{row.sales}</span>
       )
     },
   },
@@ -263,7 +269,7 @@ export const salesByCountryCols = [
     accessor: 'bounce',
     Cell: ({ row }) => {
       return (
-        <span className='text-lg font-medium'>{row.bounce}</span>
+        <span className=''>{row.bounce}%</span>
       )
     },
   },
