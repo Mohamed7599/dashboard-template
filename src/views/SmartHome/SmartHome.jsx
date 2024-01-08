@@ -1,21 +1,21 @@
-import Card from '../../Components/Card';
+import Switch from '@mui/material/Switch';
 import React, { useState } from 'react';
-import sun from '../../assets/Images/icon-sun-cloud.webp';
-import kitchen from '../../assets/Images/kitchen.jpg';
-import { wheatherData, wheatherOptions, consumptionData, consumptionOptions } from './utils';
 import { Bar, Doughnut } from 'react-chartjs-2';
+import CircularSliderWithChildren from 'react-circular-slider-svg';
+import { FaDotCircle } from "react-icons/fa";
+import { TiPlus } from "react-icons/ti";
+import Card from '../../Components/Card';
 import Tabs from '../../Components/tabs';
 import attic from '../../assets/Images/attic.jpg';
+import sun from '../../assets/Images/icon-sun-cloud.webp';
+import kitchen from '../../assets/Images/kitchen.jpg';
 import living from '../../assets/Images/living.jpg';
-import CircularSliderWithChildren from 'react-circular-slider-svg';
-import Switch from '@mui/material/Switch';
+import temperature from '../../assets/icons/icons8-high-temperature-100.png';
 import humidity from '../../assets/icons/icons8-humidity-100.png';
-import temperature from '../../assets/icons/icons8-high-temperature-100.png'
-import snow from '../../assets/icons/icons8-snow-100.png';
 import lights from '../../assets/icons/icons8-lights-100.png';
+import snow from '../../assets/icons/icons8-snow-100.png';
 import wifi from '../../assets/icons/icons8-wifi-100.png';
-import { TiPlus } from "react-icons/ti";
-import { FaDotCircle } from "react-icons/fa";
+import { consumptionData, consumptionOptions, wheatherData, wheatherOptions } from './utils';
 
 
 
@@ -23,8 +23,8 @@ import {
     ArcElement,
     BarElement,
     CategoryScale,
-    LinearScale,
     Chart as ChartJS,
+    LinearScale,
 } from 'chart.js';
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement);
 const SmartHome = () => {
@@ -41,7 +41,7 @@ const SmartHome = () => {
     };
     return (
         <div className='pr-5 py-8 flex flex-col gap-5'>
-            <div className='grid grid-cols-12 lg:gap-5 gap-y-28'>
+            <div className='grid grid-cols-12 lg:gap-7 gap-y-28'>
                 <div className='col-span-12 lg:col-span-7'>
                     <Card className={'relative h-full'} >
                         <div className='rounded-2xl image h-[400px]'>
