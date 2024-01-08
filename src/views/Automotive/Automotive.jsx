@@ -2,12 +2,39 @@ import React from 'react';
 import Card from '../../Components/Card';
 import sun from '../../assets/Images/icon-sun-cloud.webp';
 import { FaCarAlt } from "react-icons/fa";
-import { MdBatteryFull } from "react-icons/md";
+import { MdBatteryFull, MdHeadset, MdWatch } from "react-icons/md";
 import { BsSpeedometer2 } from "react-icons/bs";
-import { IoVolumeMedium } from "react-icons/io5";
+import { IoVolumeMedium, IoPlay, IoPower } from "react-icons/io5";
 import tesla from '../../assets/Images/tesla-model-s.png';
 import teslaLayer from '../../assets/Images/waves-white.svg';
 import { IoMdMap } from "react-icons/io";
+import TextField from '@mui/material/TextField';
+import { styled } from '@mui/system';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import { IoIosSearch } from "react-icons/io";
+
+const CustomTextField = styled(TextField)(({ theme }) => ({
+    '& .MuiInputLabel-root': {
+        color: '#4b5563', // Change the color of the label
+    },
+    '& .MuiInputLabel-root.Mui-focused': {
+        color: '#ec407a', // Change the color of the label when focused
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: '#ec407a', // Change the underline color after clicking
+    },
+    '& .MuiInput-underline:before': {
+        borderBottomColor: 'white', // Change the underline color in the normal state
+    },
+    '&:hover .MuiInput-underline:before': {
+        borderBottomColor: '#fff', // Remove the hover underline color
+    },
+    '& .MuiInputBase-input': {
+        color: 'white', // Change the text color in the normal state
+    },
+
+}));
 
 const Automotive = () => {
     return (
@@ -125,6 +152,53 @@ const Automotive = () => {
                         </Card>
                     </div>
                 </div>
+            </div>
+            {/* mediaplayer and google maps section */}
+
+            <div className='grid grid-cols-12'>
+                <Card className={'col-span-12 bg-gradient-dark '}>
+                    {/* Trip about */}
+                    <div className="grid grid-cols-12 gap-y-4 pb-4 border-b border-slate-400 divide-slate-600">
+                        <CustomTextField id="standard-basic" label="Search anything..." variant="standard" className='col-span-12 lg:col-span-3' InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <IconButton>
+                                        <IoIosSearch className='text-gray-600' />
+                                    </IconButton>
+                                </InputAdornment>
+                            ),
+                        }} />
+                        <div className='col-span-12 lg:col-span-9 flex justify-end items-center gap-5'>
+                            <div className='flex gap-4 items-center'>
+                                <MdHeadset className='text-white' size={20} />
+                                <IoPlay className='text-white' size={20} />
+                                <IoPower className='text-white' size={20} />
+                                <MdWatch className='text-white' size={20} />
+                            </div>
+                            <p className='text-3xl font-extrabold text-white'>10:45</p>
+                        </div>
+                    </div>
+                    <div className='grid grid-cols-12 px-2 pt-3 divide-x divide-slate-400'>
+                        <div className='col-span-4 my-auto'>
+                            <div className='flex gap-2 items-center'>
+                                <p className='text-4xl text-white font-extrabold'>11:13</p>
+                                <span className='text-gray-400 text-lg'>Estimated arrival time</span>
+                            </div>
+                        </div>
+                        <div className='col-span-4 flex justify-center p-2'>
+                            <div className='flex gap-2 items-center'>
+                                <p className='text-4xl text-white font-extrabold'>2.4<sup className='text-lg'>Km</sup></p>
+                                <span className='text-gray-400 text-lg'>Turn right in 2.4 miles</span>
+                            </div>
+                        </div>
+                        <div className='col-span-4 p-2 flex justify-end'>
+                            <div className='flex gap-2 items-center'>
+                                <p className='text-4xl text-white font-extrabold'>6.3<sup className='text-lg'>Km</sup></p>
+                                <span className='text-gray-400 text-lg '>Distance to Creative Tim</span>
+                            </div>
+                        </div>
+                    </div>
+                </Card>
             </div>
         </div>
     );
