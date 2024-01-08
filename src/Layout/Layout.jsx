@@ -12,19 +12,19 @@ const Layout = () => {
     const maxSidebarWidth = '280px'; // Set your maximum expected width here
 
     const sidebarStyle = {
-        width: isSidebarOpen ? maxSidebarWidth : '32px',
-        marginRight: isSidebarOpen ? '0px' : '24px',
-        transition: 'all 0.5s ease-in-out',
+        width: isSidebarOpen ? maxSidebarWidth : '140px',
+        // marginRight: isSidebarOpen ? '0px' : '24px',
+        transition: 'all 0.3s ease-in-out',
     };
     return (
         <>
-            <div className={`flex justify-between ${isSidebarOpen ? 'gap-2' : 'gap-8'}`}>
+            <div className={`flex justify-between gap-2`}>
                 <div style={sidebarStyle} className={`sticky top-3 bottom-0 h-[calc(100vh-22px)]`}>
                     <Sidebar isSidebarOpen={isSidebarOpen} />
                 </div>
                 <div className="flex-grow flex flex-col">
-                    <Navbar className='flex-grow overflow-auto' isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-                    <div className="flex-grow overflow-auto">
+                    <Navbar className='flex-grow' isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                    <div className="flex-grow">
                         <Outlet />
                     </div>
                     <Footer />

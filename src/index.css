@@ -130,3 +130,7 @@ h1 {
 .bg-gradient-info {
   background-image: linear-gradient(195deg, #49a3f1, #1a73e8);
 }
+
+.image-container:hover .buttons-container {
+  opacity: 1;
+}
