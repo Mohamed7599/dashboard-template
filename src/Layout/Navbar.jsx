@@ -25,16 +25,15 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     }, []);
 
     return (
-        <div className={`flex justify-between py-4 items-center mr-5 px-4 rounded-3xl drop-shadow-lg background-blur-lg transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-90 sticky top-5 z-50  ' : 'bg-transparent'}`}>
-            <div className='flex gap-3 items-center
-            
-            '>
+        <div className={`flex justify-between py-4 items-center mr-5 px-4 rounded-3xl drop-shadow-lg background-blur-lg transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-90 sticky top-5 z-10' : ''}`}>
+            <div className='flex gap-3 items-center'>
                 {isSidebarOpen ? <HiMenuAlt3 size={32} className='' onClick={() => { toggleSidebar() }} /> : <HiMenu size={32} className='' onClick={() => { toggleSidebar() }} />}
                 <div className='flex flex-col'>
-                    <span className='font-semibold hidden lg:block'>Home / Dashbord / {pathName.slice(1)}</span>
-                    <h3 className='text-xl font-semibold pt-1'>{pathName.slice(1)}</h3>
+                    <span className='font-semibold hidden lg:block'>Home / Dashboard / {pathName === "/" ? "Analytics" : pathName.slice(1)}
+                    </span>
+                    <h3 className='text-xl font-semibold pt-1'>{pathName === "/" ? "Analytics" : pathName.slice(1)}</h3>
                 </div>
-            </div>
+            </div >
             <div className='flex gap-4 items-center'>
                 <TextField
                     label="Search"
