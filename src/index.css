@@ -135,3 +135,35 @@ h1 {
 .image-container:hover .buttons-container {
   opacity: 1;
 }
+
+.discover-image {
+  background-image: url("./assets/images/mountains.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  border-radius: 0.75rem;
+}
+
+.discover-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(195deg, #ec407a, #d81b60);
+  opacity: 0.6;
+  border-radius: 0.75rem;
+}
+
+.add-Story {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 .3125rem .625rem 0 rgba(0, 0, 0, .12) !important;
+}

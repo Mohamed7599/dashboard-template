@@ -5,7 +5,11 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 
 export default function Tabs({ tabs, value, onChange }) {
-
+    const customeLabels = (tabs) => {
+        return tabs.map((tab, index) => (
+            <span key={index} className='flex gap-2'>{tab?.icon ? tab.icon : ''} {tab.title}</span>
+        ));
+    }
     return (
         <TabContext value={value} sx={{
             //change the height of the TABS
@@ -15,7 +19,7 @@ export default function Tabs({ tabs, value, onChange }) {
                 minHeight: '20px'
             }}>
                 {tabs.map((tab, index) => {
-                    return (<Tab label={tab} value={String(index + 1)} key={index} sx={{
+                    return (<Tab label={customeLabels(tabs)[index]} value={String(index + 1)} key={index} sx={{
                         textTransform: 'capitalize',
                         minWidth: '100px',
                         margin: '0.5rem 0.5rem',

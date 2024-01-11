@@ -33,7 +33,15 @@ const SmartHome = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    const tabs = [{
+        title: 'Kitchen',
+    }, {
 
+        title: 'Living',
+    }, {
+
+        title: 'Attic',
+    }]
     const images = {
         '1': kitchen,
         '2': living,
@@ -55,7 +63,7 @@ const SmartHome = () => {
                         </div>
                         <div className='flex justify-between items-center'>
                             <h6 className='text-xl font-medium'>Cameras</h6>
-                            <Tabs tabs={['Kitchen', 'Living', 'Attic']} value={value} onChange={handleChange} />
+                            <Tabs tabs={tabs} value={value} onChange={handleChange} />
                         </div>
 
                     </Card>
@@ -77,7 +85,6 @@ const SmartHome = () => {
                         <div className='lg:h-[78%] h-[300px] mt-24'>
                             <Bar data={wheatherData} options={wheatherOptions} />
                         </div>
-
                     </Card>
                 </div>
 
