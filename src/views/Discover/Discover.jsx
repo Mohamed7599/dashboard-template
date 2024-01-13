@@ -105,8 +105,11 @@ const Discover = () => {
     return (
         <div className='pr-5 py-8 flex flex-col gap-5 '>
             <div className='discover-image'>
+
+            </div>
+            <div className='grid grid-cols-12'>
                 {/* userInfo */}
-                <Card className='flex flex-col gap-5 absolute top-[85%] inset-x-10'>
+                <Card className='flex flex-col col-span-12 gap-5 -mt-20 z-20 mx-8'>
                     <div className='flex justify-between items-center w-full'>
                         <div className='flex gap-4 items-center'>
                             <img src={user1} alt="user" width={75} className='rounded-lg' />
@@ -136,104 +139,106 @@ const Discover = () => {
                             </div>
                         ))}
                     </div>
-                    <div className='grid grid-cols-12 gap-16 p-6'>
+                    <div className='grid grid-cols-12 lg:gap-16 gap-y-6 p-6'>
                         {/* Post part */}
-                        <div className='col-span-12 lg:col-span-8 flex flex-col gap-2'>
-                            {/* post owner info */}
-                            <div className="flex justify-between pb-5">
-                                <div className='flex gap-3 items-center'>
-                                    <img src={user5} alt="" width={52} height={52} className='rounded-full' />
-                                    <div className='flex flex-col gap-y-1'>
-                                        <p>John Snow</p>
-                                        <span className='text-slate-500'>3 days ago</span>
-                                    </div>
-                                </div>
-                                <div className='flex items-center'>
-                                    <button className='btn btn-bg-gradient-primary bg-gradient-primary text-white'>+ Follow</button>
-                                </div>
-                            </div>
-                            <hr />
-                            {/* post content */}
-                            <div className='flex flex-col gap-2 py-8'>
-                                {/* Post-data */}
-                                <p className='text-lg text-gray-600/70 font-light pb-3'>Personal profiles are the perfect way for you to grab their attention and persuade recruiters to continue reading your CV because you’re telling them from the off exactly why they should hire you.</p>
-                                <img src={postImage} alt="post-image" className='rounded-xl' />
-                                <div className='flex justify-between py-3'>
-                                    <div className='flex gap-3 items-center'>
-                                        <button className='flex gap-1 text-gray-400'>
-                                            <BiSolidLike size={20} />
-                                            <span>150</span>
-                                        </button>
-                                        <button className='flex gap-1 text-gray-400'>
-                                            <MdModeComment size={20} />
-                                            <span>150</span>
-                                        </button>
-                                        <button className='flex  gap-1 text-gray-400'>
-                                            <FaShare size={20} />
-                                            <span>150</span>
-                                        </button>
-                                    </div>
-                                    <div className='flex gap-2 items-center'>
-                                        <div className='flex'>
-                                            <img src={user2} alt="" width={30} className='rounded-full' />
-                                            <img src={user3} alt="" width={30} className='rounded-full' />
-                                            <img src={user4} alt="" width={30} className='rounded-full' />
+                        <div className='col-span-12 lg:col-span-8 flex flex-col'>
+                            <div className=''>
+                                {/* post owner info */}
+                                <div className="flex flex-col lg:flex-row justify-between items-center gap-3 pb-5">
+                                    <div className='flex lg:flex-row flex-col gap-3 items-center'>
+                                        <img src={user5} alt="" width={52} height={52} className='rounded-full' />
+                                        <div className='flex flex-col gap-y-1'>
+                                            <p>John Snow</p>
+                                            <span className='text-slate-500'>3 days ago</span>
                                         </div>
-                                        <span className='font-semibold text-slate-500'>and 30+ more</span>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <button className='btn btn-bg-gradient-primary bg-gradient-primary text-white'>+ Follow</button>
                                     </div>
                                 </div>
                                 <hr />
-                                {/* Comments */}
-                                <div className='flex flex-col gap-10 py-3'>
-                                    <div className='flex gap-3 items-start'>
-                                        <img src={user1} alt="user" width={52} className='rounded-full' />
-                                        <div className='flex flex-col gap-1'>
-                                            <p className='text-lg font-semibold'>Richard Davis</p>
-                                            <p className='text-gray-500'>I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves!</p>
-                                            <div className='flex gap-4 pt-3 '>
-                                                <button className='flex items-center gap-2 text-gray-400'>
-                                                    <MdModeComment size={16} />
-                                                    <span>3 Likes</span>
-                                                </button>
-                                                <button className='flex items-center  gap-2 text-gray-400'>
-                                                    <FaShare size={16} />
-                                                    <span>2 Shares</span>
-                                                </button>
+                                {/* post content */}
+                                <div className='flex flex-col gap-2 py-8 w-full'>
+                                    {/* Post-data */}
+                                    <p className='text-lg text-gray-600/70 font-light pb-3'>Personal profiles are the perfect way for you to grab their attention and persuade recruiters to continue reading your CV because you’re telling them from the off exactly why they should hire you.</p>
+                                    <img src={postImage} alt="post-image" className='rounded-xl w-full' />
+                                    <div className='flex justify-between py-3'>
+                                        <div className='flex gap-3 items-center'>
+                                            <button className='flex gap-1 text-gray-400'>
+                                                <BiSolidLike size={20} />
+                                                <span>150</span>
+                                            </button>
+                                            <button className='flex gap-1 text-gray-400'>
+                                                <MdModeComment size={20} />
+                                                <span>150</span>
+                                            </button>
+                                            <button className='flex  gap-1 text-gray-400'>
+                                                <FaShare size={20} />
+                                                <span>150</span>
+                                            </button>
+                                        </div>
+                                        <div className='flex gap-2 items-center'>
+                                            <div className='flex'>
+                                                <img src={user2} alt="" width={30} className='rounded-full' />
+                                                <img src={user3} alt="" width={30} className='rounded-full' />
+                                                <img src={user4} alt="" width={30} className='rounded-full' />
+                                            </div>
+                                            <span className='font-semibold text-slate-500'>and 30+ more</span>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    {/* Comments */}
+                                    <div className='flex flex-col gap-10 py-3'>
+                                        <div className='flex gap-3 items-start'>
+                                            <img src={user1} alt="user" width={52} className='rounded-full' />
+                                            <div className='flex flex-col gap-1'>
+                                                <p className='text-lg font-semibold'>Richard Davis</p>
+                                                <p className='text-gray-500'>I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves!</p>
+                                                <div className='flex gap-4 pt-3 '>
+                                                    <button className='flex items-center gap-2 text-gray-400'>
+                                                        <MdModeComment size={16} />
+                                                        <span>3 Likes</span>
+                                                    </button>
+                                                    <button className='flex items-center  gap-2 text-gray-400'>
+                                                        <FaShare size={16} />
+                                                        <span>2 Shares</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='flex gap-3 items-start'>
+                                            <img src={user4} alt="user" width={52} className='rounded-full' />
+                                            <div className='flex flex-col gap-1'>
+                                                <p className='text-lg font-semibold'>Jessica Stones</p>
+                                                <p className='text-gray-500'>Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out. It’s like a little kid, a little boy.</p>
+                                                <div className='flex gap-4 pt-3 '>
+                                                    <button className='flex items-center gap-2 text-gray-400'>
+                                                        <MdModeComment size={16} />
+                                                        <span>10 Likes</span>
+                                                    </button>
+                                                    <button className='flex items-center  gap-2 text-gray-400'>
+                                                        <FaShare size={16} />
+                                                        <span>1 Shares</span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='flex gap-3 items-start'>
-                                        <img src={user4} alt="user" width={52} className='rounded-full' />
-                                        <div className='flex flex-col gap-1'>
-                                            <p className='text-lg font-semibold'>Jessica Stones</p>
-                                            <p className='text-gray-500'>Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out. It’s like a little kid, a little boy.</p>
-                                            <div className='flex gap-4 pt-3 '>
-                                                <button className='flex items-center gap-2 text-gray-400'>
-                                                    <MdModeComment size={16} />
-                                                    <span>10 Likes</span>
-                                                </button>
-                                                <button className='flex items-center  gap-2 text-gray-400'>
-                                                    <FaShare size={16} />
-                                                    <span>1 Shares</span>
-                                                </button>
-                                            </div>
+                                    {/* Add Comment */}
+                                    <div className='flex gap-4 items-start w-full pt-3 '>
+                                        <img src={user9} alt="user" width={52} className='rounded-full' />
+                                        <div className='flex items-end gap-5 w-full'>
+                                            <CustomTextField id="standard-multiline-static"
+                                                multiline
+                                                rows={5}
+                                                placeholder='Write your comment ...'
+                                                variant="standard"
+                                                className='w-full' />
+                                            <button className='px-4 py-2 rounded-lg btn-bg-gradient-primary bg-gradient-primary text-white '><IoMdSend size={18} />
+                                            </button>
                                         </div>
-                                    </div>
-                                </div>
-                                {/* Add Comment */}
-                                <div className='flex gap-4 items-start w-full pt-3 '>
-                                    <img src={user9} alt="user" width={52} className='rounded-full' />
-                                    <div className='flex items-end gap-5 w-full'>
-                                        <CustomTextField id="standard-multiline-static"
-                                            multiline
-                                            rows={5}
-                                            placeholder='Write your comment ...'
-                                            variant="standard"
-                                            className='w-full' />
-                                        <button className='px-4 py-2 rounded-lg btn-bg-gradient-primary bg-gradient-primary text-white '><IoMdSend size={18} />
-                                        </button>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -387,7 +392,6 @@ const Discover = () => {
                     </div>
                 </Card>
             </div>
-
 
         </div>
     );
