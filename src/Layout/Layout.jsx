@@ -6,23 +6,44 @@ import Sidebar from './Sidebar';
 
 const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarManuallyCollapsed, setIsSidebarManuallyCollapsed] = useState(false);
+    const maxSidebarWidth = '250px';
+
     const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
+        const newIsSidebarOpen = !isSidebarOpen;
+        setIsSidebarOpen(newIsSidebarOpen);
+        setIsSidebarManuallyCollapsed(!newIsSidebarOpen);
     }
-    const maxSidebarWidth = '280px'; // Set your maximum expected width here
+
+    const handleMouseEnter = () => {
+        if (isSidebarManuallyCollapsed) {
+            setIsSidebarOpen(true);
+        }
+    }
+
+    const handleMouseLeave = () => {
+        if (isSidebarManuallyCollapsed) { // Check if the sidebar is collapsed
+            setIsSidebarOpen(false);
+        }
+    }
+
 
     const sidebarStyle = {
-        width: isSidebarOpen ? maxSidebarWidth : '140px',
-        // marginRight: isSidebarOpen ? '0px' : '24px',
+        width: isSidebarOpen ? maxSidebarWidth : '122px',
         transition: 'all 0.3s ease-in-out',
     };
+
+
+    // Rest of the code...
+
     return (
         <>
-            <div className={`flex justify-between gap-2`}>
-                <div style={sidebarStyle} className={`sticky top-3 bottom-0 h-[calc(100vh-22px)]`}>
+            <div style={{ display: 'grid', gridTemplateColumns: `${isSidebarOpen ? maxSidebarWidth : '122px'} auto`, transition: 'grid-template-columns 0.3s ease-in-out' }}>
+                <div style={sidebarStyle} className={`sticky top-3 bottom-0 h-[calc(100vh-22px)]`} onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}>
                     <Sidebar isSidebarOpen={isSidebarOpen} />
                 </div>
-                <div className="flex-grow flex flex-col">
+                <div className="flex-grow">
                     <Navbar className='flex-grow' isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                     <div className="flex-grow">
                         <Outlet />
