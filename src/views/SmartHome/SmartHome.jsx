@@ -234,9 +234,9 @@ const SmartHome = () => {
                 </div>
             </div >
             <hr className='my-6' />
-            <div className='grid grid-cols-12 gap-5 '>
-                <div className=' col-span-6 md:col-span-4 lg:col-span-2'>
-                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full'}>
+            <div className='grid grid-cols-12 gap-5 items-stretch'>
+                <div className=' col-span-6 md:col-span-4 lg:col-span-2 flex flex-grow'>
+                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
                                 <span className=' text-lg text-gray-400'>Off</span>
@@ -250,8 +250,8 @@ const SmartHome = () => {
                         </div>
                     </Card>
                 </div>
-                <div className=' col-span-6 md:col-span-4 lg:col-span-2'>
-                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} bgColor={'bg-[#e91e63]'}>
+                <div className='col-span-6 md:col-span-4 lg:col-span-2 flex flex-grow'>
+                    <Card bgColor={'bg-[#e91e63]'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
                                 <span className=' text-lg text-white'>On</span>
@@ -265,8 +265,8 @@ const SmartHome = () => {
                         </div>
                     </Card>
                 </div>
-                <div className=' col-span-6 md:col-span-4 lg:col-span-2'>
-                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full'}>
+                <div className='col-span-6 md:col-span-4 lg:col-span-2 flex flex-grow'>
+                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
                                 <span className=' text-lg text-gray-400'>Off</span>
@@ -280,8 +280,8 @@ const SmartHome = () => {
                         </div>
                     </Card>
                 </div>
-                <div className=' col-span-6 md:col-span-4 lg:col-span-2'>
-                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full'}>
+                <div className=' col-span-6 md:col-span-4 lg:col-span-2 flex flex-grow'>
+                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
                                 <span className=' text-lg text-gray-400'>Off</span>
@@ -295,8 +295,8 @@ const SmartHome = () => {
                         </div>
                     </Card>
                 </div>
-                <div className=' col-span-6 md:col-span-4 lg:col-span-2'>
-                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} bgColor={'bg-[#e91e63]'}>
+                <div className=' col-span-6 md:col-span-4 lg:col-span-2 flex flex-grow'>
+                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} bgColor={'bg-[#e91e63]'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
                                 <span className=' text-lg text-white'>Off</span>
@@ -310,11 +310,11 @@ const SmartHome = () => {
                         </div>
                     </Card>
                 </div>
-                <div className=' col-span-6 md:col-span-4 lg:col-span-2'>
-                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full'}>
+                <div className=' col-span-6 md:col-span-4 lg:col-span-2 flex flex-grow'>
+                    <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full w-full'}>
                         <div className='p-2 flex flex-col gap-2 justify-center items-center h-full'>
                             <TiPlus className='text-4xl text-gray-500' />
-                            <p className='text-2xl font-bold text-gray-500'>New device</p>
+                            <p className='text-2xl font-bold text-gray-500 text-center'>New device</p>
                         </div>
                     </Card>
                 </div>
