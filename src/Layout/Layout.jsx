@@ -19,7 +19,7 @@ const Layout = () => {
     return (
         <>
             <div className={`flex justify-between gap-2`}>
-                <div style={sidebarStyle} className={`sticky top-3 bottom-0 h-[calc(100vh-22px)]`}>
+                <div style={sidebarStyle} className={`sticky top-3 bottom-0 h-[calc(100vh-22px)] min-h-screen`}>
                     <Sidebar isSidebarOpen={isSidebarOpen} />
                 </div>
                 <div className="flex-grow flex flex-col">
