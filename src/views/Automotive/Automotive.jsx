@@ -32,11 +32,9 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
         borderBottomColor: '#ec407a', // Change the underline color after clicking
     },
     '& .MuiInput-underline:before': {
-        borderBottomColor: 'white', // Change the underline color in the normal state
+        borderBottomColor: 'white !important', // Change the underline color in the normal state
     },
-    '&:hover .MuiInput-underline:before': {
-        borderBottomColor: '#fff', // Remove the hover underline color
-    },
+
     '& .MuiInputBase-input': {
         color: 'white', // Change the text color in the normal state
     },

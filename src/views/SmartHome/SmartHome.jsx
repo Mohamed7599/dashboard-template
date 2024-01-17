@@ -28,12 +28,25 @@ import {
 } from 'chart.js';
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement);
 const SmartHome = () => {
+    const [switchState, setSwitchState] = useState(true);
     const [value1, setValue1] = useState(21);
     const [value, setValue] = React.useState('1');
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    const handleSwitchToggle = () => {
+        setSwitchState(prevState => !prevState);
+    };
 
+    const tabs = [{
+        title: 'Kitchen',
+    }, {
+
+        title: 'Living',
+    }, {
+
+        title: 'Attic',
+    }]
     const images = {
         '1': kitchen,
         '2': living,
@@ -43,26 +56,25 @@ const SmartHome = () => {
         <div className='pr-5 py-8 flex flex-col gap-5'>
             <div className='grid grid-cols-12 lg:gap-7 gap-y-28'>
                 <div className='col-span-12 lg:col-span-7'>
-                    <Card className={'relative h-full'} >
-                        <div className='rounded-2xl image h-[400px]'>
+                    <Card className={'h-full flex flex-col gap-5'} >
+                        <div className='rounded-2xl relative h-[400px] -mt-10'>
                             <img src={images[value]} alt='room' className='rounded-2xl h-full w-full' />
-                            <div className='absolute inset-0 bg-black bg-opacity-40 rounded-2xl'>
-                                <div className='flex justify-between p-6 items-center'>
-                                    <span className='text-lg text-white'>17.05.2021 4:34PM</span>
-                                    <span className='text-sm bg-gray-300 text-gray-500 font-medium uppercase flex justify-center items-center p-1 rounded-lg gap-1'><FaDotCircle className='text-[#ec407a]' /> Recording</span>
-                                </div>
+                            <div className='absolute inset-0 bg-black bg-opacity-40 rounded-2xl h-full'></div>
+                            <div className=' absolute top-1 w-full flex justify-between p-6 items-center'>
+                                <span className='text-lg text-white'>17.05.2021 4:34PM</span>
+                                <span className='text-sm bg-gray-300 text-gray-500 font-medium uppercase flex justify-center items-center p-1 rounded-lg gap-1'><FaDotCircle className='text-[#ec407a]' /> Recording</span>
                             </div>
                         </div>
                         <div className='flex justify-between items-center'>
                             <h6 className='text-xl font-medium'>Cameras</h6>
-                            <Tabs tabs={['Kitchen', 'Living', 'Attic']} value={value} onChange={handleChange} />
+                            <Tabs tabs={tabs} value={value} onChange={handleChange} />
                         </div>
 
                     </Card>
                 </div>
                 <div className='lg:col-span-5 col-span-12'>
                     <Card className={'relative h-full flex flex-col justify-between'}>
-                        <Card bgColor={'bg-[#ec407a]'} className={'absolute bottom-[78%] w-[95%]'}>
+                        <Card bgColor={'bg-[#ec407a]'} className={'-mt-10'}>
                             <div className='flex justify-between items-center'>
                                 <div>
                                     <h3 className='font-bold text-gray-400'>Weather Today</h3>
@@ -74,10 +86,9 @@ const SmartHome = () => {
                                 </div>
                             </div>
                         </Card>
-                        <div className='lg:h-[78%] h-[300px] mt-24'>
+                        <div className='lg:h-[78%] h-[300px] mt-3'>
                             <Bar data={wheatherData} options={wheatherOptions} />
                         </div>
-
                     </Card>
                 </div>
 
@@ -239,13 +250,15 @@ const SmartHome = () => {
                     <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
-                                <span className=' text-lg text-gray-400'>Off</span>
-                                <Switch />
+                                <span className={`text-lg ${switchState ? 'text-white' : 'text-gray-400'}`}>
+                                    {switchState ? 'On' : 'Off'}
+                                </span>
+                                <Switch onChange={handleSwitchToggle} checked={switchState} />
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <img src={humidity} alt="humidity-icon" width={65} className='pl-3' />
-                                <p className='text-xl font-semibold text-gray-500'>Humidity</p>
-                                <span>Inactive since: 2 days</span>
+                                <p className={`text-xl font-semibold text-gray-500 ${switchState ? 'text-white' : 'text-gray-400'}`}>Humidity</p>
+                                <span className={`${switchState ? 'text-white' : 'text-gray-400'}`}>Inactive since: 2 days</span>
                             </div>
                         </div>
                     </Card>

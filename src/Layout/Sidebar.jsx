@@ -61,7 +61,7 @@ export default function Sidebar({ isSidebarOpen }) {
     ]
     return (
         <div
-            className={`h-[calc(100vh-20px)] bg-gradient-dark shadow-inner shadow-[#2c2c30] ${isSidebarOpen ? 'rounded-3xl ' : 'rounded-2xl items-center'}  py-4 px-8 mx-4 cursor-default flex flex-col`}
+            className={`h-[calc(100vh-20px)] bg-gradient-dark shadow-inner rounded-2xl  shadow-[#2c2c30] ${isSidebarOpen ? '' : 'items-center'}  py-4 px-8 mx-4 cursor-default flex flex-col`}
         >            <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
                 <div className='flex justify-center gap-2'>
                     <img src="/src/assets/Images/logo-ct.png" width={24.5} height={24.5} alt="logo" />
@@ -100,7 +100,7 @@ export default function Sidebar({ isSidebarOpen }) {
                         ))
                     ) : (
                         dashboards.map((dashboard) => (
-                            <div key={dashboard.name} className={`flex gap-2 py-2 mt-2 px-5 items-center justify-center rounded-lg cursor-pointer hover:bg-[#4e4e51] ${selectedDashboard === dashboard.name ? 'bg-[#e91e63] hover:bg-[#e91e63]' : ''}`}
+                            <div key={dashboard.name} className={`flex gap-2 py-3 mt-2 px-7 items-center justify-center rounded-lg cursor-pointer hover:bg-[#4e4e51] ${selectedDashboard === dashboard.name ? 'bg-[#e91e63] hover:bg-[#e91e63]' : ''}`}
                                 onClick={() => {
                                     setSelectedDashboard(dashboard.name);
                                     navigate(`/${dashboard.path}`);
