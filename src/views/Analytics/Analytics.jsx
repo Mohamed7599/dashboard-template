@@ -26,7 +26,7 @@ import { CompletedTasksOptions, DailySalesData, DailySalesOptions, salesByCountr
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement);
 const Analytics = () => {
     return (
-        <div className='pr-5 py-8 flex flex-col gap-5'>
+        <div className='py-8 flex flex-col gap-5'>
             <div className='grid grid-cols-12 gap-3'>
                 <div className="col-span-12">
                     <Card className={'relative lg:grid lg:grid-cols-12 flex flex-col-reverse'} >

@@ -43,7 +43,7 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
 
 const Automotive = () => {
     return (
-        <div className='pr-5 py-8 flex flex-col gap-5'>
+        <div className='py-8 flex flex-col gap-5'>
             <div className='grid grid-cols-12 gap-4'>
                 <div className='lg:col-span-7 col-span-12 lg:h-full h-[420px]'>
                     <Card className="bg-gradient-dark relative h-full">

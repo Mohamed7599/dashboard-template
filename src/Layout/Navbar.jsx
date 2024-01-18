@@ -6,11 +6,12 @@ import { IoIosSearch } from "react-icons/io";
 import { FaGear } from "react-icons/fa6";
 import { FaUserCircle, FaBell } from "react-icons/fa";
 import { HiMenuAlt3, HiMenu } from "react-icons/hi";
+import MobileSidebarMenu from './MobileSidebarMenu';
 
 
 
 
-const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
+const Navbar = ({ isSidebarOpen, toggleSidebar, isSidebarDisplayed }) => {
     const location = useLocation();
     const pathName = location.pathname;
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +26,9 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     }, []);
 
     return (
-        <div className={`flex justify-between py-4 items-center mr-5 px-4 rounded-3xl drop-shadow-lg background-blur-lg transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-90 sticky top-5 z-30' : ''}`}>
+        <div className={`flex justify-between py-4 items-center px-4 rounded-3xl drop-shadow-lg background-blur-lg transition-all duration-500 ease-in-out ${isScrolled ? 'bg-white bg-opacity-90 sticky top-5 z-30' : ''}`}>
             <div className='flex gap-3 items-center'>
-                {isSidebarOpen ? <HiMenuAlt3 size={32} className='' onClick={() => { toggleSidebar() }} /> : <HiMenu size={32} className='' onClick={() => { toggleSidebar() }} />}
+                {isSidebarDisplayed ? (isSidebarOpen ? <HiMenuAlt3 size={32} className='' onClick={() => { toggleSidebar() }} /> : <HiMenu size={32} className='' onClick={() => { toggleSidebar() }} />) : <MobileSidebarMenu />}
                 <div className='flex flex-col'>
                     <span className='font-semibold hidden lg:block'>Home / Dashboard / {pathName === "/" ? "Analytics" : pathName.slice(1)}
                     </span>

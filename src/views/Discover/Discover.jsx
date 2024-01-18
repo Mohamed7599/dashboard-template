@@ -103,7 +103,7 @@ const Discover = () => {
     }));
 
     return (
-        <div className='pr-5 py-8 flex flex-col gap-5 '>
+        <div className='py-8 flex flex-col gap-5 '>
             <div className='discover-image'>
 
             </div>

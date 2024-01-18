@@ -4,7 +4,6 @@ import { MdDashboard } from "react-icons/md";
 import Collapsible from 'react-collapsible';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import { HiMenuAlt3, HiMenu } from "react-icons/hi";
 
 // eslint-disable-next-line react/prop-types
 const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
@@ -26,7 +25,7 @@ const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
         </div>
     )
 }
-export default function Sidebar({ isSidebarOpen }) {
+export default function Sidebar({ isSidebarOpen , isSidebarDisplayed }) {
     const [isDashboardCollapsed, setIsDashboardCollapsed] = useState(true);
     const [selectedDashboard, setSelectedDashboard] = useState('Analytics');
 
@@ -61,18 +60,22 @@ export default function Sidebar({ isSidebarOpen }) {
     ]
     return (
         <div
-            className={`h-[calc(100vh-20px)] bg-gradient-dark shadow-inner rounded-2xl  shadow-[#2c2c30] ${isSidebarOpen ? '' : 'items-center'}  py-4 px-8 mx-4 cursor-default flex flex-col`}
-        >            <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
+            className={`h-[calc(100vh-20px)] bg-gradient-dark shadow-inner rounded-2xl  shadow-[#2c2c30] ${isSidebarOpen ? '' : 'items-center'} ${isSidebarDisplayed ? 'flex flex-col' : 'hidden'}  py-4 px-8 ml-4 cursor-default `}
+        >
+            <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
                 <div className='flex justify-center gap-2'>
                     <img src="/src/assets/Images/logo-ct.png" width={24.5} height={24.5} alt="logo" />
                     <p className={`text-white font-bold text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>My Dashboard</p>
                 </div>
             </div>
             <nav>
-                <div className={`flex gap-2 py-2 mt-2  items-center transition-all duration-500 overflow-hidden ${isSidebarOpen ? 'justify-start px-3' : 'justify-center'} rounded-lg hover:bg-[#4e4e51]`}>
-                    <Avatar name="Mohamed Magdy" size="30" round={true} />
-                    <p className={`text-white text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>Mohamed Magdy</p>
+                <div className='border-b border-gray-600'>
+                    <div className={`flex gap-2 py-2 mt-2  items-center transition-all duration-500 overflow-hidden ${isSidebarOpen ? 'justify-start px-3' : 'justify-center'} rounded-lg`}>
+                        <Avatar name="Mohamed Magdy" size="30" round={true} />
+                        <p className={`text-white text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>Mohamed Magdy</p>
+                    </div>
                 </div>
+
                 <Collapsible
                     trigger={<CustomHeader isDashboardCollapsed={isDashboardCollapsed} isSidebarOpen={isSidebarOpen} />}
                     onOpening={() => setIsDashboardCollapsed(false)}

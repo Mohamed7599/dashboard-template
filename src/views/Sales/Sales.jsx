@@ -26,7 +26,7 @@ ChartJS.register(ArcElement, CategoryScale,
 
 const Sales = () => {
     return (
-        <div className='pr-5 py-8 flex flex-col gap-5'>
+        <div className=' py-8 flex flex-col gap-5'>
             <div className='grid grid-cols-12 gap-3'>
                 <div className='lg:col-span-4 col-span-12'>
                     <Card className={'h-full'}  >

@@ -53,7 +53,7 @@ const SmartHome = () => {
         '3': attic,
     };
     return (
-        <div className='pr-5 py-8 flex flex-col gap-5'>
+        <div className='py-8 flex flex-col gap-5'>
             <div className='grid grid-cols-12 lg:gap-7 gap-y-28'>
                 <div className='col-span-12 lg:col-span-7'>
                     <Card className={'h-full flex flex-col gap-5'} >
@@ -250,15 +250,15 @@ const SmartHome = () => {
                     <Card isTitleDefaultColor={true} titleSize={'text-lg'} className={'h-full w-full'}>
                         <div className='p-2'>
                             <div className='flex justify-between px-1 items-center'>
-                                <span className={`text-lg ${switchState ? 'text-white' : 'text-gray-400'}`}>
-                                    {switchState ? 'On' : 'Off'}
+                                <span className={`text-lg text-gray-400`}>
+                                    {'Off'}
                                 </span>
                                 <Switch onChange={handleSwitchToggle} checked={switchState} />
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <img src={humidity} alt="humidity-icon" width={65} className='pl-3' />
-                                <p className={`text-xl font-semibold text-gray-500 ${switchState ? 'text-white' : 'text-gray-400'}`}>Humidity</p>
-                                <span className={`${switchState ? 'text-white' : 'text-gray-400'}`}>Inactive since: 2 days</span>
+                                <p className={'text-xl font-semibold text-gray-500 '}>Humidity</p>
+                                <span className={'text-gray-400'}>Inactive since: 2 days</span>
                             </div>
                         </div>
                     </Card>
