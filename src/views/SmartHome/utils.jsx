@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-
+import React from 'react';
 const generateData = (labels, min, max) => {
     return labels.map(() => faker.number.int({ min: min, max: max }));
 };

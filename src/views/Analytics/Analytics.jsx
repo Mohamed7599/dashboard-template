@@ -225,7 +225,7 @@ const Analytics = () => {
                     <div className='flex flex-col justify-center items-center gap-3 pb-5 cursor-default'>
                         <h4 className='text-2xl hover:text-[#ec407a]'>Beautiful Castle</h4>
                         <p className='text-lg text-gray-500 text-center font-light px-5'>The place is close to Metro Station and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in
-                         Milan.
+                            Milan.
                         </p>
                     </div>
                     <hr />

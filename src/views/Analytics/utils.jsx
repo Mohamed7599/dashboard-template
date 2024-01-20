@@ -3,6 +3,8 @@ import us from '../../assets/icons/united-states.png';
 import germany from '../../assets/icons/germany.png';
 import canada from '../../assets/icons/canada.png';
 import france from '../../assets/icons/france.png';
+import { faker } from '@faker-js/faker';
+import React from 'react';
 
 export const salesByCountryTable = [
     {
@@ -92,7 +94,7 @@ export const salesByCountryCols = [
 ];
 
 
-import { faker } from '@faker-js/faker';
+
 
 const generateData = (labels, min, max) => {
     return labels.map(() => faker.number.int({ min: min, max: max }));

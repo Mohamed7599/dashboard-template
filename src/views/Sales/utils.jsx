@@ -10,6 +10,7 @@ import chair from '../../assets/Images/black-chair.jpg';
 import charger from '../../assets/Images/bang-sound.jpg';
 import camera from '../../assets/Images/photo-tools.jpg';
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
+import React from 'react';
 const generateData = (labels, min, max) => {
   return labels.map(() => faker.number.int({ min: min, max: max }));
 };

@@ -1,4 +1,5 @@
 // routes.js
+import React from 'react';
 import Analytics from './views/Analytics/Analytics';
 import Discover from './views/Discover/Discover';
 import Sales from './views/Sales/Sales';
