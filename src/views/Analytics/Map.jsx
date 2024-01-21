@@ -7,7 +7,7 @@ const Maps = () => {
     const [geographies, setGeographies] = useState([]);
 
     useEffect(() => {
-        fetch('/public/features.json')
+        fetch('/features.json')  // Remove the "/public" from the path
             .then(response => response.json())
             .then(data => setGeographies(data.features));
     }, []);
