@@ -4,7 +4,7 @@ import { MdDashboard } from "react-icons/md";
 import Collapsible from 'react-collapsible';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo-g6uAbWac.png';
 // eslint-disable-next-line react/prop-types
 const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
     return (

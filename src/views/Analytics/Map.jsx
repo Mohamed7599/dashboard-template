@@ -2,16 +2,9 @@ import React, { useState, useEffect } from "react";
 import {
     ComposableMap, Geographies, Geography, Marker,
 } from "react-simple-maps";
-
+import geoData from "./features.json";
 const Maps = () => {
-    const [geographies, setGeographies] = useState([]);
 
-    useEffect(() => {
-        fetch('/features.json')
-            .then(response => response.json())
-            .then(data => setGeographies(data.features));
-
-    }, []);
     const markers = [
         { code: "USA", coordinates: [-95.7129, 37.0902], fill: "#ec407a", stroke: "#f48fb1" }, // Example coordinates for the USA
         { code: "CAN", coordinates: [-106.3468, 56.1304], fill: "#ec407a", stroke: "#f48fb1" }, // Example coordinates for Canada
@@ -33,7 +26,7 @@ const Maps = () => {
                 scale: 100,
             }} className="h-[400px]">
 
-                < Geographies geography={geographies}>
+                < Geographies geography={geoData}>
                     {({ geographies }) =>
                         geographies.map((geo) => (
                             <Geography
