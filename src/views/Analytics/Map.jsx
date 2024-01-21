@@ -7,9 +7,10 @@ const Maps = () => {
     const [geographies, setGeographies] = useState([]);
 
     useEffect(() => {
-        fetch('/features.json')  // Remove the "/public" from the path
+        fetch('/features.json')
             .then(response => response.json())
             .then(data => setGeographies(data.features));
+
     }, []);
     const markers = [
         { code: "USA", coordinates: [-95.7129, 37.0902], fill: "#ec407a", stroke: "#f48fb1" }, // Example coordinates for the USA
