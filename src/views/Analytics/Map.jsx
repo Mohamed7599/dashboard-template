@@ -7,7 +7,7 @@ const Maps = () => {
     const [geographies, setGeographies] = useState([]);
 
     useEffect(() => {
-        fetch('/features.json')
+        fetch('/public/features.json')
             .then(response => response.json())
             .then(data => setGeographies(data.features));
     }, []);
