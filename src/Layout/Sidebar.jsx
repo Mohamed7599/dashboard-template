@@ -4,7 +4,7 @@ import { MdDashboard } from "react-icons/md";
 import Collapsible from 'react-collapsible';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-
+import logo from '../assets/Imaged/logo.png';
 // eslint-disable-next-line react/prop-types
 const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
     return (
@@ -25,7 +25,7 @@ const CustomHeader = ({ isDashboardCollapsed, isSidebarOpen }) => {
         </div>
     )
 }
-export default function Sidebar({ isSidebarOpen , isSidebarDisplayed }) {
+export default function Sidebar({ isSidebarOpen, isSidebarDisplayed }) {
     const [isDashboardCollapsed, setIsDashboardCollapsed] = useState(true);
     const [selectedDashboard, setSelectedDashboard] = useState('Analytics');
 
@@ -64,7 +64,7 @@ export default function Sidebar({ isSidebarOpen , isSidebarDisplayed }) {
         >
             <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
                 <div className='flex justify-center gap-2'>
-                    <img src="/src/assets/Images/logo-ct.png" width={24.5} height={24.5} alt="logo" />
+                    <img src={logo} width={24.5} height={24.5} alt="logo" />
                     <p className={`text-white font-bold text-nowrap ${isSidebarOpen ? 'block' : 'hidden'}`}>My Dashboard</p>
                 </div>
             </div>
