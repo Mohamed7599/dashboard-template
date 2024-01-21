@@ -3,22 +3,13 @@ import {
     ComposableMap, Geographies, Geography, Marker,
 } from "react-simple-maps";
 const Maps = () => {
-    const [geographies, setGeographies] = useState([]);
 
-    useEffect(() => {
+
+    const geographies = () => {
         fetch('/features.json')
-            .then(response => {
-                console.log(response); // Log the entire response object
-                return response.json();
-            })
-            .then(data => {
-                console.log(data); // Log the parsed JSON data
-                setGeographies(data.features);
-            })
-            .catch(error => {
-                console.error('Error fetching features.json:', error);
-            });
-    }, []);
+            .then(response => response.json())
+    }
+    console.log(geographies)
     const markers = [
         { code: "USA", coordinates: [-95.7129, 37.0902], fill: "#ec407a", stroke: "#f48fb1" }, // Example coordinates for the USA
         { code: "CAN", coordinates: [-106.3468, 56.1304], fill: "#ec407a", stroke: "#f48fb1" }, // Example coordinates for Canada
