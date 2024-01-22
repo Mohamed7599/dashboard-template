@@ -3,6 +3,7 @@ import us from '../../assets/icons/united-states.png';
 import germany from '../../assets/icons/germany.png';
 import canada from '../../assets/icons/canada.png';
 import france from '../../assets/icons/france.png';
+import React from 'react';
 
 export const salesByCountryTable = [
     {
