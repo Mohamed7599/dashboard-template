@@ -183,13 +183,13 @@ const Automotive = () => {
                         </div>
                     </div>
                     <div className='grid grid-cols-12 px-2 py-3 divide-slate-400 items-center m-3 gap-y-3'>
-                        <div className='lg:col-span-4 md:col-span-6 col-span-12 border-b pb-2 md:border-r flex lg:justify-start justify-center'>
+                        <div className='lg:col-span-4 md:col-span-6 col-span-12 lg:border-b-0 border-b pb-2 md:border-r flex lg:justify-start justify-center'>
                             <div className='flex gap-2 items-center'>
                                 <p className='text-4xl text-white font-extrabold'>11:13</p>
                                 <span className='text-gray-400 text-lg'>Estimated arrival time</span>
                             </div>
                         </div>
-                        <div className='lg:col-span-4 md:col-span-6 col-span-12 pb-2 border-b lg:border-r flex justify-center'>
+                        <div className='lg:col-span-4 md:col-span-6 col-span-12 pb-2 border-b lg:border-b-0 lg:border-r flex justify-center'>
                             <div className='flex gap-2 items-center'>
                                 <p className='text-4xl text-white font-extrabold'>2.4<sup className='text-lg'>Km</sup></p>
                                 <span className='text-gray-400 text-lg'>Turn right in 2.4 miles</span>
