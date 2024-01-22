@@ -31,7 +31,7 @@ const Maps = () => {
                 scale: 100,
             }} className="h-[400px]">
 
-                < Geographies geography={geographies}>
+                < Geographies geography="./features.json">
                     {({ geographies }) =>
                         geographies.map((geo) => (
                             <Geography

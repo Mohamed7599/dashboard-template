@@ -8,6 +8,9 @@ import Avatar from 'react-avatar';
 import Collapsible from 'react-collapsible';
 import { MdDashboard } from "react-icons/md";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { he } from '@faker-js/faker';
+
+
 const dashboards = [
     {
         name: 'Analytics',
@@ -68,7 +71,7 @@ export default function MobileSidebarMenu() {
     const list = () => (
         <Box
             className=' bg-gradient-dark  text-white'
-            sx={{ width: '240px', height: '100%', overflowY: 'auto' }}
+            sx={{ width: 250, height: '100%', overflowY: 'auto'}}
             role="presentation"
         >
             <List className=''>
@@ -125,21 +128,17 @@ export default function MobileSidebarMenu() {
             <Drawer
                 open={isDrawerOpen}
                 onClose={toggleDrawer(false)}
-                sx={{
-                    '.MuiDrawer-paper': {
-                        backgroundColor: 'transparent', // Transparent background
-                        borderRadius: '12px', // Rounded corners
-                        position: 'fixed',
-                        top: '10px',
-                        bottom: '10px',
-                        left: '10px',
-                        height: 'calc(100% - 20px)', // Subtract the top and bottom margins from the height
-                    },
+                style={{
+                    width: '250px',
+                    position: 'absolute',
+                    top: '10px',
+                    bottom: '10px',
+                    left: '10px'
                 }}
             >
                 {list("left")}
             </Drawer>
-            {isDrawerOpen && <div onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)} />}
+            {isDrawerOpen && <div onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)} style={{ position: 'fixed', top: '5%', bottom: 5, left: 0, width: '100%', height: '100%', padding: '20px' }} />}
         </>
     );
 }
