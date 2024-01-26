@@ -177,7 +177,7 @@ const Discover = () => {
                                                 <span>150</span>
                                             </button>
                                         </div>
-                                        <div className='flex gap-2 items-center'>
+                                        <div className='lg:flex gap-2 items-center hidden'>
                                             <div className='flex'>
                                                 <img src={user2} alt="" width={30} className='rounded-full' />
                                                 <img src={user3} alt="" width={30} className='rounded-full' />
