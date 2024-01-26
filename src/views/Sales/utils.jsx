@@ -284,7 +284,7 @@ export const productsCols = [
 
       return (
         <div className='flex gap-4 pl-2 items-center py-2'>
-          <img src={img} alt={productName} width={48} height={48} className='rounded-full' />
+          <img src={img} alt={productName} width={48} height={48} className='rounded-full hidden md:visible' />
           <div className='flex flex-col'>
             <span className='text-lg font-medium'>{productName}</span>
             <span className='text-base text-[#4caf50]'>{orders} <span className='text-gray-400'>Order</span></span>
