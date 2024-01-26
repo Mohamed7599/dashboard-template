@@ -8,9 +8,7 @@ import Avatar from 'react-avatar';
 import Collapsible from 'react-collapsible';
 import { MdDashboard } from "react-icons/md";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import { he } from '@faker-js/faker';
-
-
+import logo from '../assets/Images/logo.png';
 const dashboards = [
     {
         name: 'Analytics',
@@ -71,13 +69,13 @@ export default function MobileSidebarMenu() {
     const list = () => (
         <Box
             className=' bg-gradient-dark  text-white'
-            sx={{ width: 250, height: '100%', overflowY: 'auto'}}
+            sx={{ width: 250, height: '100%', overflowY: 'auto' }}
             role="presentation"
         >
             <List className=''>
                 <div className="py-3 flex gap-2 border-b border-gray-600 justify-center items-center transition-all duration-500 overflow-hidden">
                     <div className='flex justify-center gap-2'>
-                        <img src="/src/assets/Images/logo-ct.png" width={24.5} height={24.5} alt="logo" />
+                        <img src={logo} width={24.5} height={24.5} alt="logo" />
                         <p className={`text-white font-bold text-nowrap`}>My Dashboard</p>
                     </div>
                 </div>
